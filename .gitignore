@@ -1,0 +1,13 @@
+*.gcno
+*.o
+*.d
+*.exe
+*.i
+*.txt
+*.gz
+*.rar
+*.gz
+*.lo
+
+
+
