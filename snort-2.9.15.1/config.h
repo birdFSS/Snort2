@@ -153,7 +153,7 @@
 /* #undef HAVE_LINUXTHREADS */
 
 /* Define to 1 if you have the <lzma.h> header file. */
-/* #undef HAVE_LZMA_H */
+#define HAVE_LZMA_H 1
 
 /* Define to 1 if you have the `mallinfo' function. */
 #define HAVE_MALLINFO 1
@@ -308,8 +308,7 @@
 /* Define if Linux */
 #define LINUX 1
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
 /* Define if MacOS */

@@ -3054,7 +3054,7 @@ OptTreeNode * ParseRuleOptions(SnortConfig *sc, RuleTreeNode *rtn,
                 option_args = opts[1];
                 DEBUG_WRAP(DebugMessage(DEBUG_CONFIGRULES,"   option args: %s\n", option_args););
             }
-			//通用规则解析
+
             for (j = 0; rule_options[j].name != NULL; j++)
             {
                 if (strcasecmp(opts[0], rule_options[j].name) == 0)
@@ -3149,10 +3149,7 @@ OptTreeNode * ParseRuleOptions(SnortConfig *sc, RuleTreeNode *rtn,
                 }
 
                 if (dopt_keyword == NULL)
-                {
-              		dopt_keyword = SnortStrdup(opts[0]);
-               	}
-                    
+                    dopt_keyword = SnortStrdup(opts[0]);
 
                 num_detection_opts++;
             }

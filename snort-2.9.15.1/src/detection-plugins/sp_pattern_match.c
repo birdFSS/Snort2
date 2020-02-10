@@ -2017,7 +2017,7 @@ void ParseProtectedPattern(char *rule, OptTreeNode * otn, int type)
         ds_idx = ds_idx->next;
 
     ds_idx->pattern_buf = (char *)SnortAlloc(pat_idx);
-    memcpy(ds_idx->pattern_buf, tmp_buf, pat_idx);	/* 将二进制的Hash存放在ds_idx->pattern_buf中*/
+    memcpy(ds_idx->pattern_buf, tmp_buf, pat_idx);
 
     ds_idx->pattern_size = pat_idx;
     ds_idx->search = uniSearchHash;
