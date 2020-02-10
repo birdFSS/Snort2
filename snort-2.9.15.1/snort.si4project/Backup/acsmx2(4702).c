@@ -152,7 +152,7 @@
 #include "sf_dynamic_preprocessor.h"
 #endif //DYNAMIC_PREPROC_CONTEXT
 
-//#define printf LogMessage
+#define printf LogMessage
 
 #define MEMASSERT(p,s) if(!p){FatalError("ACSM-No Memory: %s!\n",s);}
 

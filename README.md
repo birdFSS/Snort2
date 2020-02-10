@@ -11,5 +11,12 @@ sudo src/snort -dev -l ./log -c /etc/snort/snort.conf
 ```
 
 
+#### 3.printf调试
+snort-2.9.15.1/src/sfutil/acsmx2.c
+snort-2.9.15.1/src/sfutil/bnfa_search.c
+将这里面两个printf宏注释掉了，后面再改回来
+
+
+
 
 

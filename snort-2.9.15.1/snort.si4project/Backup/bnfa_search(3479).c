@@ -173,7 +173,7 @@
  */
 #define LAST_STATE_INIT  0xffffffff
 
-//#define printf LogMessage
+#define printf LogMessage
 /*
 * Case Translation Table - his guarantees we use
 * indexed lookups for case conversion

@@ -1615,7 +1615,6 @@ int fpEvalPacket(Packet *p)
 {
     int ip_proto = GET_IPH_PROTO(p);
     OTNX_MATCH_DATA *omd = snort_conf->omd;
-	printf("omd->size=%d", omd->iMatchInfoArraySize);
 
     /* Run UDP rules against the UDP header of Teredo packets */
     if ( p->udph && (p->proto_bits & (PROTO_BIT__TEREDO | PROTO_BIT__GTP)) )
