@@ -56,7 +56,8 @@ sp_file_data.c sp_file_data.h \
 sp_base64_decode.c sp_base64_decode.h \
 sp_base64_data.c sp_base64_data.h \
 sp_pkt_data.c sp_pkt_data.h \
-sp_file_type.c sp_file_type.h
+sp_file_type.c sp_file_type.h \
+sp_av_check.c sp_av_check.h
 
 if BUILD_REACT
 libspd_a_SOURCES += sp_react.c sp_react.h

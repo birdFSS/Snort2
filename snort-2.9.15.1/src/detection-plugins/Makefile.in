@@ -133,8 +133,8 @@ am__libspd_a_SOURCES_DIST = detection_options.c detection_options.h \
 	sp_urilen_check.h sp_file_data.c sp_file_data.h \
 	sp_base64_decode.c sp_base64_decode.h sp_base64_data.c \
 	sp_base64_data.h sp_pkt_data.c sp_pkt_data.h sp_file_type.c \
-	sp_file_type.h sp_react.c sp_react.h sp_respond3.c \
-	sp_respond.h sp_appid.c sp_appid.h
+	sp_file_type.h sp_av_check.c sp_av_check.h sp_react.c \
+	sp_react.h sp_respond3.c sp_respond.h sp_appid.c sp_appid.h
 @BUILD_REACT_TRUE@am__objects_1 = sp_react.$(OBJEXT)
 @BUILD_RESPOND3_TRUE@am__objects_2 = sp_respond3.$(OBJEXT)
 @FEAT_OPEN_APPID_TRUE@am__objects_3 = sp_appid.$(OBJEXT)
@@ -157,8 +157,9 @@ am_libspd_a_OBJECTS = detection_options.$(OBJEXT) sp_asn1.$(OBJEXT) \
 	sp_tcp_win_check.$(OBJEXT) sp_ttl_check.$(OBJEXT) \
 	sp_urilen_check.$(OBJEXT) sp_file_data.$(OBJEXT) \
 	sp_base64_decode.$(OBJEXT) sp_base64_data.$(OBJEXT) \
-	sp_pkt_data.$(OBJEXT) sp_file_type.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_2) $(am__objects_3)
+	sp_pkt_data.$(OBJEXT) sp_file_type.$(OBJEXT) \
+	sp_av_check.$(OBJEXT) $(am__objects_1) $(am__objects_2) \
+	$(am__objects_3)
 nodist_libspd_a_OBJECTS = sf_snort_plugin_hdropts.$(OBJEXT)
 libspd_a_OBJECTS = $(am_libspd_a_OBJECTS) $(nodist_libspd_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -400,7 +401,8 @@ libspd_a_SOURCES = detection_options.c detection_options.h sp_asn1.c \
 	sp_urilen_check.h sp_file_data.c sp_file_data.h \
 	sp_base64_decode.c sp_base64_decode.h sp_base64_data.c \
 	sp_base64_data.h sp_pkt_data.c sp_pkt_data.h sp_file_type.c \
-	sp_file_type.h $(am__append_1) $(am__append_2) $(am__append_3)
+	sp_file_type.h sp_av_check.c sp_av_check.h $(am__append_1) \
+	$(am__append_2) $(am__append_3)
 copy_files = \
 	if test -f $$dst_file; then \
 		x=`diff $$src_file $$dst_file >> /dev/null`; \

@@ -133,8 +133,8 @@ am__libspd_a_SOURCES_DIST = detection_options.c detection_options.h \
 	sp_urilen_check.h sp_file_data.c sp_file_data.h \
 	sp_base64_decode.c sp_base64_decode.h sp_base64_data.c \
 	sp_base64_data.h sp_pkt_data.c sp_pkt_data.h sp_file_type.c \
-	sp_file_type.h sp_react.c sp_react.h sp_respond3.c \
-	sp_respond.h sp_appid.c sp_appid.h
+	sp_file_type.h sp_av_check.c sp_av_check.h sp_react.c \
+	sp_react.h sp_respond3.c sp_respond.h sp_appid.c sp_appid.h
 am__objects_1 = sp_react.$(OBJEXT)
 am__objects_2 = sp_respond3.$(OBJEXT)
 am__objects_3 = sp_appid.$(OBJEXT)
@@ -157,8 +157,9 @@ am_libspd_a_OBJECTS = detection_options.$(OBJEXT) sp_asn1.$(OBJEXT) \
 	sp_tcp_win_check.$(OBJEXT) sp_ttl_check.$(OBJEXT) \
 	sp_urilen_check.$(OBJEXT) sp_file_data.$(OBJEXT) \
 	sp_base64_decode.$(OBJEXT) sp_base64_data.$(OBJEXT) \
-	sp_pkt_data.$(OBJEXT) sp_file_type.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_2) $(am__objects_3)
+	sp_pkt_data.$(OBJEXT) sp_file_type.$(OBJEXT) \
+	sp_av_check.$(OBJEXT) $(am__objects_1) $(am__objects_2) \
+	$(am__objects_3)
 nodist_libspd_a_OBJECTS = sf_snort_plugin_hdropts.$(OBJEXT)
 libspd_a_OBJECTS = $(am_libspd_a_OBJECTS) $(nodist_libspd_a_OBJECTS)
 AM_V_P = $(am__v_P_$(V))
@@ -238,9 +239,9 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CCONFIGFLAGS = 
 CFLAGS = -g -O2 -DSF_VISIBILITY -fvisibility=hidden -Wall
-CONFIGFLAGS =  -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE -DFEAT_OPEN_APPID -DHAVE_LIBLUAJIT
+CONFIGFLAGS =  -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE -DFEAT_OPEN_APPID -DHAVE_LIBLUAJIT
 CPP = gcc -E
-CPPFLAGS = -DLZMA -DGRE -DMPLS -DPPM_MGR -DNDEBUG -DENABLE_REACT -DENABLE_RESPOND -DENABLE_RESPONSE3 -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE -DFEAT_OPEN_APPID -DHAVE_LIBLUAJIT
+CPPFLAGS = -DLZMA -DGRE -DMPLS -DPPM_MGR -DNDEBUG -DSOURCEFIRE -DPPM_MGR -DENABLE_REACT -DENABLE_RESPOND -DENABLE_RESPONSE3 -DSF_WCHAR -DTARGET_BASED -DPERF_PROFILING -DPERF_PROFILING -DSNORT_RELOAD -DNO_NON_ETHER_DECODER -DNORMALIZER -DACTIVE_RESPONSE -DFEAT_OPEN_APPID -DHAVE_LIBLUAJIT
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -400,7 +401,8 @@ libspd_a_SOURCES = detection_options.c detection_options.h sp_asn1.c \
 	sp_urilen_check.h sp_file_data.c sp_file_data.h \
 	sp_base64_decode.c sp_base64_decode.h sp_base64_data.c \
 	sp_base64_data.h sp_pkt_data.c sp_pkt_data.h sp_file_type.c \
-	sp_file_type.h $(am__append_1) $(am__append_2) $(am__append_3)
+	sp_file_type.h sp_av_check.c sp_av_check.h $(am__append_1) \
+	$(am__append_2) $(am__append_3)
 copy_files = \
 	if test -f $$dst_file; then \
 		x=`diff $$src_file $$dst_file >> /dev/null`; \

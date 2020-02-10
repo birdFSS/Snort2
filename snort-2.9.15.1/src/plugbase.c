@@ -96,6 +96,8 @@
 #include "detection-plugins/sp_base64_data.h"
 #include "detection-plugins/sp_pkt_data.h"
 #include "detection-plugins/sp_asn1.h"
+#include "detection-plugins/sp_av_check.h"
+
 
 #ifdef ENABLE_REACT
 #include "detection-plugins/sp_react.h"
@@ -218,6 +220,9 @@ void RegisterRuleOptions(void)
 #if defined(FEAT_OPEN_APPID)
     SetupAppId();
 #endif /* defined(FEAT_OPEN_APPID) */
+
+
+    SetupAVCheck();
 }
 
 /****************************************************************************
