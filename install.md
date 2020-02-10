@@ -48,7 +48,60 @@ make
 make install
 ```
 ### 2.3 创建相应的文件夹
+1. Snort的安装目录
+```c
+sudo mkdir /etc/snort
+sudo mkdir /etc/snort/rules
+sudo mkdir /etc/snort/preproc_rules
+sudo mkdir /usr/local/lib/snort_dynamicrules
+sudo mkdir /etc/snort/so_rules
+```
+2. 存储过滤规则和服务器黑白名单
+```c
+sudo touch /etc/snort/rules/white_list.rules
+sudo touch /etc/snort/rules/black_list.rules
+sudo touch /etc/snort/rules/local.rules
+```
+3. 创建日志目录
+```c
+sudo mkdir /var/log/snort
+sudo mkdir /var/log/snort/archived_logs
+```
+4. 调整权限
+```c
+sudo chmod -R 5775 /etc/snort
+sudo chmod -R 5775 /var/log/snort
+sudo chmod -R 5775 /var/log/snort/archived_logs
+sudo chmod -R 5775 /etc/snort/so_rules
+sudo chmod -R 5775 /usr/local/lib/snort_dynamicrules
+```
+5. 复制文件到指定目录
+```c
+cp snort-2.9.12/etc/*.conf* /etc/snort
+cp snort-2.9.12/etc/*.map /etc/snort
+cp snort-2.9.12/etc/*.dtd /etc/snort
+cp snort-2.9.12/src/dynamic-preprocessors/build/usr/local/lib/snort_dynamicpreprocessor/* /usr/local/lib/snort_dynamicpreprocessor/            
+```
 
+6. 修改默认配置
+```c
+sudo vim /etc/snort/snort.conf
+```
+
+```c
+snort.conf 
+----------------------
+#设置路径变量
+var RULE_PATH /etc/snort/rules
+var SO_RULE_PATH /etc/snort/so_rules
+var PREPROC_RULE_PATH /etc/snort/preproc_rules
+
+var WHITE_LIST_PATH /etc/snort/rules/
+var BLACK_LIST_PATH /etc/snort/rules/
+
+#将规则包含进来
+include $RULE_PATH/local.rules
+```
 
 
 
